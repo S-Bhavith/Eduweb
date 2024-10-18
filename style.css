@@ -5,19 +5,142 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
 body{
     background-color:black;
     color:white;
 }
 
 nav{
+    width:100%;
+    position:fixed;
     display:flex;
     align-items:center;
     justify-content: space-between;
+    padding:1rem;
+    backdrop-filter: blur(50px);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
-ul{
+#logo{
+    font-size:x-large;
+    background: linear-gradient(0deg, yellow, red);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+}
+
+#logo a{
+    text-decoration:none;
+}
+
+ul#main-menu{
+    list-style:none;
     display:flex;
     align-items: center;
     justify-content: space-evenly;
+    gap:2.5rem;
+}
+
+li a{
+    text-decoration:none;
+    color:white;
+}
+
+#ham-menu{
+    display: none;
+}
+
+ul#mini-menu{
+    width:0px;
+    overflow: hidden;
+}
+
+@media (max-width:870px){
+    #ham-menu{
+        display: flex;
+        flex-direction:column;
+        gap:8px;
+        cursor: pointer;
+    }
+
+    .ham{
+        height:3px;
+        width:45px;
+        background-color:white;
+        border-radius:1.5px;
+    }
+
+    ul#main-menu{
+        display: none;
+    }
+
+    #sub-nav{
+        position: fixed;
+        right:0;
+    }
+
+    /* ul#mini-menu{
+        height: 100dvh;
+        background-color:rgba(255, 255, 255, 0.4);
+        list-style:none;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        transition: width 250ms linear;
+    } */
+
+    ul.active{
+        width:auto;
+        height: 100dvh;
+        background-color:rgba(255, 255, 255, 0.4);
+        list-style:none;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        transition: width 250ms linear;
+    }
+
+    #mini-menu li{
+        padding-inline:1.5rem;
+    }
+}
+
+/* Main */
+
+.sec{
+    height:100dvh;
+    scroll-snap-align: center;
+}
+
+#home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#yt-input{
+    position:absolute;
+    top:10%;
+    width:75%;
+    padding:1rem;
+    border-radius:2rem;
+    border: none;
+    outline: none;
+    font-size:large;
+}
+
+#yt-input::placeholder{
+    text-align: center;
+    color:blueviolet;
+}
+
+#slogan{
+    font-size:5vw;
 }
