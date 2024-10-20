@@ -84,17 +84,6 @@ ul#mini-menu{
         right:0;
     }
 
-    /* ul#mini-menu{
-        height: 100dvh;
-        background-color:rgba(255, 255, 255, 0.4);
-        list-style:none;
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        flex-direction: column;
-        transition: width 250ms linear;
-    } */
-
     ul.active{
         width:auto;
         height: 100dvh;
@@ -123,22 +112,23 @@ ul#mini-menu{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 #yt-input{
-    position:absolute;
-    top:10%;
     width:75%;
+    top:25%;
+    left:12.5%;
+    position: absolute;
     padding:1rem;
     border-radius:2rem;
-    border: none;
-    outline: none;
+    border:none;
+    outline:none;
     font-size:large;
 }
 
 #yt-input::placeholder{
     text-align: center;
-    color:blueviolet;
 }
 
 #slogan{
